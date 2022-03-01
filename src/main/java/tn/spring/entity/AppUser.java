@@ -134,7 +134,7 @@ public static long getSerialversionuid() {
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
 		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
-		
+		//dddddd
 		return Collections.singletonList(authority);
 	}
 
