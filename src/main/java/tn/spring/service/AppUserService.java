@@ -15,7 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import lombok.experimental.var;
 import lombok.extern.slf4j.Slf4j;
 import tn.spring.entity.AppUser;
 import tn.spring.entity.AppUserRole;
