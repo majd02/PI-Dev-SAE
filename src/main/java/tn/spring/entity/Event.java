@@ -34,6 +34,8 @@ public class Event {
 		@Column(name="datefin")
 		private Date datefin ;
 		private int nbplace ;
+
+		private int nbplacemin ;
 		@OneToMany(mappedBy = "event")
 		private Set<Demande> demandes;
 		@ManyToMany(mappedBy="events")
