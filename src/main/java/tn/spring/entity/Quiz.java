@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 @Entity
@@ -21,6 +22,6 @@ public class Quiz {
 	private int totpt;
 	@ManyToMany(mappedBy="quizs")
 	private Set<AppUser> users;
-	@ManyToMany
+	@OneToMany(mappedBy = "quizs")
 	private Set<Question> questions;
 }
