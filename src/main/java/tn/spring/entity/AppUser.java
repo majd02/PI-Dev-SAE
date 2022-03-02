@@ -41,6 +41,7 @@ public class AppUser implements UserDetails{
 	private String lastname ;
 	private String email ;
 	private String password ;
+	private int points;
 @Enumerated(EnumType.STRING)
 	private AppUserRole appUserRole;
 	public String getFirstname() {
@@ -97,6 +98,8 @@ public static long getSerialversionuid() {
 	private Set<Event> events;
 	@OneToMany(mappedBy = "appuser")
 	private Set<Subject> subjects;
+	@ManyToOne
+	private  Badge badges;
 	
 	public AppUser() {
 		super();

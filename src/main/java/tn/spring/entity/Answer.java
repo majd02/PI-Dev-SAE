@@ -22,10 +22,33 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+
 @Table(name="answer")
 public class Answer  {
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Question getQuestion() {
+		return question;
+	}
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public boolean isCorrect() {
+		return correct;
+	}
+	public void setCorrect(boolean correct) {
+		this.correct = correct;
+	}
 	@Id
 	@GeneratedValue(strategy=IDENTITY)
 	@Column(name="id",unique=true,nullable=false)

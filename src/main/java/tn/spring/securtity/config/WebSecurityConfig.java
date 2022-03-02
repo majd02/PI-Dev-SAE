@@ -27,13 +27,11 @@ import com.nimbusds.jose.proc.SecurityContext;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
+ 
 
-import lombok.AllArgsConstructor; 
 
-
-@Configuration
-@AllArgsConstructor
 @EnableWebSecurity
+@Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 @Autowired

@@ -2,10 +2,14 @@ package tn.spring.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -26,6 +30,9 @@ public class Badge {
 	private Long id; 
 	private String Nom;
 	private String description;
-	private int nbreP;
+	private int nbrePmin;
+	private int nbrePmax;
+	@OneToMany(mappedBy = "badges")
+	private Set<AppUser> appuser;
 
 }
