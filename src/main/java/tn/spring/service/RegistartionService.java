@@ -37,7 +37,29 @@ public class RegistartionService {
 			 																																											
 			 );
 
-     String link = "http://localhost:8089/SpringMVCMajd/api/v1/registration/confirm?token=" + token;
+     String link = "http://localhost:8089/SpringMVCMajd/api/v1/registartion/confirm?token=" + token;
+	 IE.send(request.getEmail(),buildEmail(request.getFirstName(),link)); 
+	 
+	 return token;
+		 
+	}
+	public String registeradmin(RegistrationRequest request) {
+		// TODO Auto-generated method stub
+	 boolean test =	EV.test(request.getEmail());
+	 if (!test) {
+		 throw new IllegalStateException("email not valid");
+	 }
+	 String token = US.SignUpUser(
+			 new AppUser(
+					 request.getFirstName(),
+                     request.getLastName(),	
+					 request.getEmail(),
+                     request.getPassword()
+					 )
+			 																																											
+			 );
+
+     String link = "http://localhost:8089/SpringMVCMajd/api/v1/registartion/confirm?token=" + token;
 	 IE.send(request.getEmail(),buildEmail(request.getFirstName(),link)); 
 	 
 	 return token;

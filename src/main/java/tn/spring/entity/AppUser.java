@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -42,6 +43,9 @@ public class AppUser implements UserDetails{
 	private String email ;
 	private String password ;
 	private int points;
+	@OneToOne(mappedBy = "appuser")
+	 
+	private InvitationEvent invitationev;
 @Enumerated(EnumType.STRING)
 	private AppUserRole appUserRole;
 	public String getFirstname() {
@@ -139,6 +143,22 @@ public static long getSerialversionuid() {
 		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
 		
 		return Collections.singletonList(authority);
+	}
+
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
+
+	public Badge getBadges() {
+		return badges;
+	}
+
+	public void setBadges(Badge badges) {
+		this.badges = badges;
 	}
 
 	@Override

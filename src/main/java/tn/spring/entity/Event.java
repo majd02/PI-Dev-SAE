@@ -1,7 +1,7 @@
 
 package tn.spring.entity;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -23,6 +23,18 @@ import lombok.Data;
 @Entity
 @Data
 public class Event {
+	public int getNbplace() {
+		return nbplace;
+	}
+	public void setNbplace(int nbplace) {
+		this.nbplace = nbplace;
+	}
+	public int getNbplacemin() {
+		return nbplacemin;
+	}
+	public void setNbplacemin(int nbplacemin) {
+		this.nbplacemin = nbplacemin;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id ;
@@ -38,6 +50,8 @@ public class Event {
 		private int nbplacemin ;
 		@OneToMany(mappedBy = "event")
 		private Set<Demande> demandes;
+		@OneToMany(mappedBy = "event")
+		private Set<InvitationEvent> invitation;
 		@ManyToMany(mappedBy="events")
 		private Set<AppUser> users;
 		public Long getId() {

@@ -30,7 +30,9 @@ public void demande(Demande d, Long ide , Long idu )
 	 d.setEvent(e);
 	DR.save(d);
 }
-
+public String jibmail(Long id) {
+	return DR.jibmail(id);
+}
 public void Accept(Long id) {
 	
 Demande d=	DR.findById(id).orElse(null);

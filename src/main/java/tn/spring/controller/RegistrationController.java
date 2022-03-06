@@ -40,6 +40,7 @@ public String signup(@RequestBody RegistrationRequest request)
 	
 }
 
+
 @PostMapping(path="login")
 public JwtResponse signin(@RequestBody LoginRequest request)
 {

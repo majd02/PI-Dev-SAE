@@ -27,8 +27,7 @@ private final static Logger LOGGER = org.slf4j.LoggerFactory
 	                    new MimeMessageHelper(mimeMessage, "utf-8");
 	            helper.setText(email, true);
 	            helper.setTo(to);
-	            helper.setSubject("Confirm your email");
-	            //helper.setFrom("majd.idani@esprit.tn");
+	            helper.setSubject("aaaaaaaaaa ");
 	            JMS.send(mimeMessage);
 	        } catch (MessagingException e) {
 	            LOGGER.error("failed to send email", e);

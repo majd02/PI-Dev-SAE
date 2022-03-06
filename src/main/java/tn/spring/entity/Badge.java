@@ -34,5 +34,18 @@ public class Badge {
 	private int nbrePmax;
 	@OneToMany(mappedBy = "badges")
 	private Set<AppUser> appuser;
+	public int getNbrePmin() {
+		return nbrePmin;
+	}
+	public void setNbrePmin(int nbrePmin) {
+		this.nbrePmin = nbrePmin;
+	}
+	public int getNbrePmax() {
+		return nbrePmax;
+	}
+	public void setNbrePmax(int nbrePmax) {
+		this.nbrePmax = nbrePmax;
+	}
+	
 
 }

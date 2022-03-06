@@ -42,6 +42,30 @@ public class Question {
 	@ManyToOne
 	private  Quiz quizs;
 	private int points;
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public Set<Answer> getAnswers() {
+		return answers;
+	}
+	public void setAnswers(Set<Answer> answers) {
+		this.answers = answers;
+	}
+	public Quiz getQuizs() {
+		return quizs;
+	}
+	public void setQuizs(Quiz quizs) {
+		this.quizs = quizs;
+	}
+	public int getPoints() {
+		return points;
+	}
+	public void setPoints(int points) {
+		this.points = points;
+	}
 	
 	
 	

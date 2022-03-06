@@ -46,9 +46,9 @@ public void Edit(@RequestBody Event e, @PathVariable("id") Long id)
 	ES.Modifier(e, id);
 }
 @GetMapping
-public List<Event> show(@AuthenticationPrincipal Jwt principal)
+public List<Event> show()
 {
-	principal.getClaimAsString("email");
+	
 	 
 	//String email = pricipal.getClaimAsString("email");
 	return ES.Show();
