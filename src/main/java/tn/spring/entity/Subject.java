@@ -18,18 +18,19 @@ public class Subject {
     @Override
     public String toString() {
         return "Subject{" +
-                "subject_id=" + subject_id +
+                "id =" + id +
                 ", name='" + name + '\'' +
                 ", articles=" + articles +
                 '}';
     }
 
-    public int getSubject_id() {
-        return subject_id;
+
+    public int getId() {
+        return id;
     }
 
-    public void setSubject_id(int subject_id) {
-        this.subject_id = subject_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -49,10 +50,9 @@ public class Subject {
     }
 
     @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-@Column(nullable = false, updatable = false)
-
-    private int subject_id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private int id;
     private String name;
     @OneToMany(mappedBy = "subject")
     @JsonIgnore
