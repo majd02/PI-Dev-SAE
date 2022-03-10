@@ -33,6 +33,13 @@ PasswordEncoder authService;
 AuthenticationService authenticationService;
 
 
+@PostMapping("/google")
+public String signup1(@RequestBody RegistrationRequest request)
+{
+	return RS.register(request);
+	
+}
+
 @PostMapping
 public String signup(@RequestBody RegistrationRequest request)
 {

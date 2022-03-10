@@ -20,7 +20,63 @@ public class CommentPost {
     private Long CommId;
 
 
-    @NonNull
+    public Long getCommId() {
+		return CommId;
+	}
+
+	public void setCommId(Long commId) {
+		CommId = commId;
+	}
+
+	public String getComment() {
+		return Comment;
+	}
+
+	public void setComment(String comment) {
+		Comment = comment;
+	}
+
+	public Date getCommentDate() {
+		return CommentDate;
+	}
+
+	public void setCommentDate(Date commentDate) {
+		CommentDate = commentDate;
+	}
+
+	public int getLikes() {
+		return Likes;
+	}
+
+	public void setLikes(int likes) {
+		Likes = likes;
+	}
+
+	public int getDislikes() {
+		return Dislikes;
+	}
+
+	public void setDislikes(int dislikes) {
+		Dislikes = dislikes;
+	}
+
+	public AppUser getUser() {
+		return user;
+	}
+
+	public void setUser(AppUser user) {
+		this.user = user;
+	}
+
+	public Posts getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Posts posts) {
+		this.posts = posts;
+	}
+
+	@NonNull
     private String Comment;
     @JsonIgnore
     private Date CommentDate;

@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import tn.spring.UserTestApplication;
 import tn.spring.entity.AppUser;
 import tn.spring.entity.LoginRequest;
 import tn.spring.repository.EvenRepository;
@@ -36,14 +35,12 @@ public class AuthenticationService {
 	        String jwt = jwtUtils.generateToken(authentication);
 
 	        User userDetails = (User) authentication.getPrincipal();
-
 	        List roles = userDetails.getAuthorities().stream()
 	                .map(item -> item.getAuthority())
 	                .collect(Collectors.toList());
 	        return new JwtResponse(jwt,
 	                userDetails.getUsername(),
-
-
+	               
 	           
 	                roles);
 	    }

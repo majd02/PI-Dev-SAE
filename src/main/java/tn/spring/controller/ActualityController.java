@@ -18,7 +18,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Actuality")
+@RequestMapping("api/v1/registartion/Actuality")
 public class ActualityController {
     @Autowired
     PostServiceImpl postService;

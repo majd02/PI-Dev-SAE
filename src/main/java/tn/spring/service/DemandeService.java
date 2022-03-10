@@ -21,10 +21,11 @@ public class DemandeService {
 	UserRepository UR;
 	@Autowired
 	EvenRepository ER;
-public void demande(Demande d, Long ide , Long idu )
+public void demande(Demande d, Long ide , String email )
 {
+	Long i =DR.jibid(email);
 	Event e = ER.findById(ide).orElse(null);
-	AppUser u =UR.findById(idu).orElse(null);
+	AppUser u =UR.findById(i).orElse(null);
     d.setEtat("en attente");
 	 d.setAppuser(u); 
 	 d.setEvent(e);

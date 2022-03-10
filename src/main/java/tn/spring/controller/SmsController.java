@@ -10,7 +10,7 @@ import tn.spring.service.ArticleService;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/sms")
+@RequestMapping("api/v1/registartion/sms")
 public class SmsController {
 
     private final ArticleService articleService;

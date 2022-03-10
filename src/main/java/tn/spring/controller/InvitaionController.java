@@ -32,6 +32,6 @@ public void inviter(@RequestBody InvitationEvent ie , @PathVariable("id") Long i
 @GetMapping("/{ide}/{idu}")
 public void demande(  Demande d , @PathVariable("ide") Long ide, @PathVariable("idu") Long idu)
 {
-	DS.demande(d,ide, idu);
+	//DS.demande(d,ide, idu);
 }
 }

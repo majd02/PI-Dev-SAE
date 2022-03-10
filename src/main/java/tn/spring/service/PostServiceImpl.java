@@ -50,13 +50,14 @@ public class PostServiceImpl implements IPostservice {
     public Posts createPost(Posts p,String mail) throws JSONException, URISyntaxException, IOException {
         try{
 
-            log.info("in Method CreatePost");
+            
+        	System.out.print("in Method CreatePost");
 
             postRepo.save(p);
-            log.info("the post is saved");
-            log.info("out of the method CreatePost");}
+            System.out.print("the post is saved");
+            System.out.print("out of the method CreatePost");}
         catch (Exception e) {
-            log.error("out of method CreatePost");
+        	System.out.print("out of method CreatePost");
         }
         Timestamp ts=new Timestamp(System.currentTimeMillis());
         Date date=new Date(ts.getTime());
@@ -73,13 +74,13 @@ public class PostServiceImpl implements IPostservice {
 
 
 
-        log.info("hahahahah");
+        System.out.print("hahahahah");
 
         Long i= DR.jibid(mail);
-        log.info(mail);
+        System.out.print(mail);
         AppUser us = userRepo.findById(i).get();
         String test= us.getEmail();
-        log.info(mail);
+        System.out.print(mail);
         p.setUser(us);
 
 
@@ -100,23 +101,23 @@ public class PostServiceImpl implements IPostservice {
 
     @Override
     public List<Posts> getAllPosts() {
-        log.info("In Method retrieve All Post");
+    	System.out.print("In Method retrieve All Post");
 
         return postRepo.findAll();
     }
 
     @Override
     public Posts getPostById(Long id) {
-        log.info("In Method retrieve Post By Id");
+    	System.out.print("In Method retrieve Post By Id");
         return postRepo.findById(id).get();
     }
 
     @Override
     public void deletePostById(Long id) {
-        log.info("In Method delete Post");
-        log.info("i'm gonna delete the Post");
+    	System.out.print("In Method delete Post");
+        System.out.print("i'm gonna delete the Post");
         postRepo.deleteById(id);
-        log.info("Out Of Method delete Post without errors");
+        System.out.print("Out Of Method delete Post without errors");
 
     }
 
@@ -204,7 +205,7 @@ public class PostServiceImpl implements IPostservice {
             uuu.setWarningNum(warning);
             userRepo.save(uuu);
         if(compteur>0){
-            log.info("this message is blocked because he contain a bad word would you please delete it than try again !! and if you "
+        	System.out.print("this message is blocked because he contain a bad word would you please delete it than try again !! and if you "
                     + "post 2 times with bad words your account will be blocked");
             return null;
         }

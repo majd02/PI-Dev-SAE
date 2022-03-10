@@ -32,6 +32,17 @@ public class DBFile {
 	@Nullable
 	private Article article ;
 	
+	
+	public Article getArticle() {
+		return article;
+	}
+
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+
+
 	public DBFile( Long id , String name , String type , byte[] data )
 	{
 		this.id = id ; 

@@ -26,13 +26,13 @@ public class CommentPostServiceImpl implements ICommentPostService {
     @Override
     public CommentPost createAndAffectCommentToPost(CommentPost cp, Long idPost) {
 
-        log.info("in method create And Effect Comment to Post");
+    	System.out.print("in method create And Effect Comment to Post");
         Posts p = postRepo.findById(idPost).orElse(null);
         p.getComments().add(cp);
         cp.setPosts(p);
         p.setNbComment(+1);
-        log.info("post :"+idPost);
-        log.info("cp :"+cp.toString());
+        System.out.print("post :"+idPost);
+        System.out.print("cp :"+cp.toString());
 
         Timestamp ts=new Timestamp(System.currentTimeMillis());
         Date date=new Date(ts.getTime());
@@ -54,10 +54,10 @@ public class CommentPostServiceImpl implements ICommentPostService {
     @Override
     public void deleteComment(Long id) {
 
-        log.info("In Method Delete comment");
-        log.info("Im gonna delete the comment");
+    	System.out.print("In Method Delete comment");
+    	System.out.print("Im gonna delete the comment");
         commentRepo.deleteById(id);
-        log.info("Out Of Method delete Comment succefully");
+        System.out.print("Out Of Method delete Comment succefully");
     }
 
     @Override

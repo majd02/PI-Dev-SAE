@@ -29,6 +29,13 @@ public class Event {
 	public void setNbplace(int nbplace) {
 		this.nbplace = nbplace;
 	}
+	private String description;
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public int getNbplacemin() {
 		return nbplacemin;
 	}
@@ -40,10 +47,30 @@ public class Event {
 		private Long id ;
 		private String name ;
 		private String location ;
-		@Column(name="dateFacture")
+		@DateTimeFormat(pattern = "dd-mm-yyyy") 
 		private Date datedebut;
-		
+		private String summary;
+		public String getSummary() {
+			return summary;
+		}
+		public void setSummary(String summary) {
+			this.summary = summary;
+		}
+		public Set<InvitationEvent> getInvitation() {
+			return invitation;
+		}
+		public void setInvitation(Set<InvitationEvent> invitation) {
+			this.invitation = invitation;
+		}
+		public Set<AppUser> getUsers() {
+			return users;
+		}
+		public void setUsers(Set<AppUser> users) {
+			this.users = users;
+		}
 		@Column(name="datefin")
+
+		@DateTimeFormat(pattern = "dd-mm-yyyy")
 		private Date datefin ;
 		private int nbplace ;
 

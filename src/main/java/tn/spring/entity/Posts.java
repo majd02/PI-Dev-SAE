@@ -22,7 +22,137 @@ import java.util.Set;
 @Table(name="Posts")
 public class Posts {
 
-    @Id
+    public Long getPostId() {
+		return postId;
+	}
+
+
+	public void setPostId(Long postId) {
+		this.postId = postId;
+	}
+
+
+	public String getContent() {
+		return Content;
+	}
+
+
+	public void setContent(String content) {
+		Content = content;
+	}
+
+
+	public int getNbComment() {
+		return NbComment;
+	}
+
+
+	public void setNbComment(int nbComment) {
+		NbComment = nbComment;
+	}
+
+
+	public int getNbreacts() {
+		return Nbreacts;
+	}
+
+
+	public void setNbreacts(int nbreacts) {
+		Nbreacts = nbreacts;
+	}
+
+
+	public Date getDatePost() {
+		return DatePost;
+	}
+
+
+	public void setDatePost(Date datePost) {
+		DatePost = datePost;
+	}
+
+
+	public String getImagePost() {
+		return ImagePost;
+	}
+
+
+	public void setImagePost(String imagePost) {
+		ImagePost = imagePost;
+	}
+
+
+	public String getAnalysis() {
+		return analysis;
+	}
+
+
+	public void setAnalysis(String analysis) {
+		this.analysis = analysis;
+	}
+
+
+	public String getSentiment() {
+		return sentiment;
+	}
+
+
+	public void setSentiment(String sentiment) {
+		this.sentiment = sentiment;
+	}
+
+
+	public Set<AppUser> getUserLikes() {
+		return userLikes;
+	}
+
+
+	public void setUserLikes(Set<AppUser> userLikes) {
+		this.userLikes = userLikes;
+	}
+
+
+	public Set<AppUser> getUserDislikes() {
+		return userDislikes;
+	}
+
+
+	public void setUserDislikes(Set<AppUser> userDislikes) {
+		this.userDislikes = userDislikes;
+	}
+
+
+	public AppUser getUser() {
+		return user;
+	}
+
+
+	public void setUser(AppUser user) {
+		this.user = user;
+	}
+
+
+	public List<CommentPost> getComments() {
+		return comments;
+	}
+
+
+	public void setComments(List<CommentPost> comments) {
+		this.comments = comments;
+	}
+
+
+	public List<Departement> getDepartements() {
+		return Departements;
+	}
+
+
+	public void setDepartements(List<Departement> departements) {
+		Departements = departements;
+	}
+
+
+	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long postId;
 
