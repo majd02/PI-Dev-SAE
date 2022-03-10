@@ -2,20 +2,12 @@ package tn.spring.entity;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -46,11 +38,38 @@ public class AppUser implements UserDetails{
 	@OneToOne(mappedBy = "appuser")
 	 
 	private InvitationEvent invitationev;
+
+
+
+	private int warningNum;
+
+	@ManyToOne(cascade= CascadeType.ALL)
+	@JsonIgnore
+	public Departement departement;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+	@JsonIgnore
+	public List<Posts> posts;
+
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
+	@JsonIgnore
+	public List<CommentPost> userComments;
+
+
+
+
+
+
 @Enumerated(EnumType.STRING)
 	private AppUserRole appUserRole;
 	public String getFirstname() {
 	return firstname;
 }
+
+
+
+
+
 
 public void setFirstname(String firstname) {
 	this.firstname = firstname;

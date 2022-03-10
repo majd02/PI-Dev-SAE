@@ -17,8 +17,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<AppUser, Long> {
 
-	Optional<AppUser> findByEmail(String email); 
-@Transactional
+	Optional<AppUser> findByEmail(String email);
+	Optional<AppUser> findById(String email);
+
 @Modifying
 @Query("UPDATE AppUser a " +
         "SET a.enabled = TRUE WHERE a.email = ?1")

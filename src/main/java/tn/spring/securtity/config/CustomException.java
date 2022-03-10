@@ -1,6 +1,8 @@
 package tn.spring.securtity.config;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
 
 public class CustomException extends RuntimeException {
 
