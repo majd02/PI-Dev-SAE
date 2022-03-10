@@ -24,12 +24,12 @@ public class DepartementServiceImpl implements IDepartementService{
 
     @Override
     public Departement createAndAffectDepartementToEntreprise(Departement d, Long id) {
-        log.info("in method create And Effect departement to Entreprise");
+        System.out.print("in method create And Effect departement to Entreprise");
         Entreprise e = entrepriseRepo.findById(id).orElse(null);
         e.getDepartements().add(d);
         d.setEntreprise(e);
-        log.info("Entreprise :"+id);
-        log.info("Departement :"+d.toString());
+        System.out.print("Entreprise :"+id);
+        System.out.print("Departement :"+d.toString());
 
         return departementRepo.save(d);
 
@@ -50,10 +50,10 @@ public class DepartementServiceImpl implements IDepartementService{
     @Override
     public void deleteDepartement(Long id) {
 
-        log.info("In Method Delete departement");
-        log.info("Im gonna delete the comment");
+    	 System.out.print("In Method Delete departement");
+    	 System.out.print("Im gonna delete the comment");
         departementRepo.deleteById(id);
-        log.info("Out Of Method delete departement succefully");
+        System.out.print("Out Of Method delete departement succefully");
 
 
 

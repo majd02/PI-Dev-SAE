@@ -41,6 +41,91 @@ public class AppUser implements UserDetails{
 
 
 
+	public InvitationEvent getInvitationev() {
+		return invitationev;
+	}
+
+
+
+
+
+
+	public void setInvitationev(InvitationEvent invitationev) {
+		this.invitationev = invitationev;
+	}
+
+
+
+
+
+
+	public int getWarningNum() {
+		return warningNum;
+	}
+
+
+
+
+
+
+	public void setWarningNum(int warningNum) {
+		this.warningNum = warningNum;
+	}
+
+
+
+
+
+
+	public Departement getDepartement() {
+		return departement;
+	}
+
+
+
+
+
+
+	public void setDepartement(Departement departement) {
+		this.departement = departement;
+	}
+
+
+
+
+
+
+	public List<Posts> getPosts() {
+		return posts;
+	}
+
+
+
+
+
+
+	public void setPosts(List<Posts> posts) {
+		this.posts = posts;
+	}
+
+
+
+
+
+
+	public List<CommentPost> getUserComments() {
+		return userComments;
+	}
+
+
+
+
+
+
+	public void setUserComments(List<CommentPost> userComments) {
+		this.userComments = userComments;
+	}
+
 	private int warningNum;
 
 	@ManyToOne(cascade= CascadeType.ALL)

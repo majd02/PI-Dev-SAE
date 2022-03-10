@@ -11,7 +11,7 @@ import tn.spring.service.SubjectService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/subject")
+@RequestMapping("api/v1/registartion/subject")
 public class SubjectController {
 
     @Autowired

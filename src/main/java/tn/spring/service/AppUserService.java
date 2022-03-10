@@ -14,7 +14,6 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -60,7 +59,7 @@ public class AppUserService implements UserDetailsService {
 		// TODO Auto-generated method stub
 		AppUser appuser =  userRepository.findByEmail(email)
 				.orElseThrow(()-> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG , email )) );
-		var role= Collections.singletonList(new SimpleGrantedAuthority(appuser.getAppUserRole().name()) ) ;
+		List<SimpleGrantedAuthority> role= Collections.singletonList(new SimpleGrantedAuthority(appuser.getAppUserRole().name()) ) ;
 		return new User(appuser.getEmail(), appuser.getPassword(),appuser.isEnabled(),true,true,true,role);
 	}
 	public String SignUpUser(AppUser appuser) {
@@ -73,6 +72,7 @@ public class AppUserService implements UserDetailsService {
 		appuser.setPassword(encodedpassword);
 		appuser.setAppUserRole(AppUserRole.ROLE_CLIENT);
 		appuser.setLocked(false);
+		appuser.setFirstName(appuser.getFirstname());
 		userRepository.save(appuser);
 		//send confirmation token
 		String token =UUID.randomUUID().toString();
@@ -89,6 +89,9 @@ public class AppUserService implements UserDetailsService {
 
 	public int enableAppUser(String email) {
 		return userRepository.enableAppUser(email);
+	}
+	public List<AppUser> dddd() {
+		return userRepository.findAll();
 	}
 
 
@@ -108,7 +111,20 @@ public class AppUserService implements UserDetailsService {
 
 
 	}
-
+	public void enableUser(Long id)
+	{
+		AppUser u =userRepository.findById(id).orElse(null);
+		u.setEnabled(false);
+		userRepository.save(u);
+		
+	}
+	public void Admin(Long id)
+	{
+		AppUser u =userRepository.findById(id).orElse(null);
+		u.setAppUserRole(AppUserRole.ROLE_ADMIN);
+		userRepository.save(u);
+		
+	}
 
 	/*   public JwtResponse authenticateUser(LoginRequest loginRequest) {
 
@@ -128,9 +144,9 @@ public class AppUserService implements UserDetailsService {
 	                userDetails.getEmail(),
 	                roles);
 	    }*/
-	// @Scheduled(cron = "*/01 * * * * *")
+	 @Scheduled(cron = "*/60 * * * * *")
 		
-	/*	public void REportedEvent()
+		public void REportedEvent()
 	 {
 			// TODO Auto-generated method stub
 			    
@@ -168,7 +184,7 @@ public class AppUserService implements UserDetailsService {
 				        
 				}
 	    
-	 }*/
+	 }
 	 private String buildEmail(Date Daten) {
 	        return "<div style=\"font-family:Helvetica,Arial,sans-serif;font-size:16px;margin:0;color:#0b0c0c\">\n" +
 	                "\n" +

@@ -9,7 +9,7 @@ import tn.spring.service.ArticleService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/article")
+@RequestMapping("api/v1/registartion/article")
 public class ArticleController {
     private final ArticleService articleService;
 

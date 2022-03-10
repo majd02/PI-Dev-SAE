@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.spring.entity.Badge;
@@ -16,6 +17,8 @@ import tn.spring.service.BadgeService;
  
 
 @RestController
+
+@RequestMapping("api/v1/registartion/badge")
 public class BadgeController {
 
 	@Autowired

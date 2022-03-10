@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("file")
+@RequestMapping("api/v1/registartion/file")
 public class DBFileRestController {
 	@Autowired
 	private DBFileService DBFileSer ;

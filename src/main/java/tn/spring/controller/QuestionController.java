@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.spring.entity.Question;
@@ -16,6 +17,7 @@ import tn.spring.service.QuestionService;
 
 @RestController
 
+@RequestMapping(path="api/v1/registartion/question")
 public class QuestionController {
 	@Autowired
 	QuestionService QR;

@@ -38,10 +38,92 @@ public class Entreprise {
     @JsonIgnore
     public List<Departement> Departements ;
 
+	public Long getEntrepriseId() {
+		return EntrepriseId;
+	}
+
+	public void setEntrepriseId(Long entrepriseId) {
+		EntrepriseId = entrepriseId;
+	}
+
+	public String getFiscalNumber() {
+		return FiscalNumber;
+	}
+
+	public void setFiscalNumber(String fiscalNumber) {
+		FiscalNumber = fiscalNumber;
+	}
+
+	public String getAdress() {
+		return Adress;
+	}
+
+	public void setAdress(String adress) {
+		Adress = adress;
+	}
+
+	public int getContactNumber() {
+		return ContactNumber;
+	}
+
+	public void setContactNumber(int contactNumber) {
+		ContactNumber = contactNumber;
+	}
+
+	public Date getCreationDate() {
+		return CreationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		CreationDate = creationDate;
+	}
+
+	public int getEmployeeNumber() {
+		return EmployeeNumber;
+	}
+
+	public void setEmployeeNumber(int employeeNumber) {
+		EmployeeNumber = employeeNumber;
+	}
+
+	public String getLogo() {
+		return Logo;
+	}
+
+	public void setLogo(String logo) {
+		Logo = logo;
+	}
+
+	public Domaine getDomaineEntreprise() {
+		return DomaineEntreprise;
+	}
+
+	public void setDomaineEntreprise(Domaine domaineEntreprise) {
+		DomaineEntreprise = domaineEntreprise;
+	}
+
+	public List<Departement> getDepartements() {
+		return Departements;
+	}
+
+	public void setDepartements(List<Departement> departements) {
+		Departements = departements;
+	}
 
 
-    //@OneToMany(cascade = CascadeType.ALL, mappedBy="entreprise")
 
-    //public List<Collaboration> collaborations ;
+    public List<Collaboration> getCollaborations() {
+		return collaborations;
+	}
+
+	public void setCollaborations(List<Collaboration> collaborations) {
+		this.collaborations = collaborations;
+	}
+
+
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="entreprise")
+
+    public List<Collaboration> collaborations ;
 
 }

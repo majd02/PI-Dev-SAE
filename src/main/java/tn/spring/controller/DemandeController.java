@@ -33,10 +33,11 @@ RegistartionService RS;
 @Autowired 
 DemandeService DS;
 //user y rejoindri
-@PostMapping("/{ide}/{idu}")
-public void demande(@RequestBody Demande d , @PathVariable("ide") Long ide, @PathVariable("idu") Long idu)
+@PostMapping("/{ide}")
+public void demande(@RequestBody Demande d , @PathVariable("ide") Long ide, Principal principal)
 {
-	DS.demande(d,ide, idu);
+	String email = principal.getName();
+	DS.demande(d,ide, email);
 }
 //userybatel
 @PostMapping("/not/{ide}/{idu}")
